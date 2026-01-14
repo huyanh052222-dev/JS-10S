@@ -12,8 +12,12 @@ function checkBoxes() {
 
         if(boxTop < triggerBottom) {
             box.classList.add('show');
+            box.classList.remove('hidden-left');
         } else {
-            box.classList.remove('show');
+            if(box.classList.contains('show')) {
+                box.classList.remove('show');
+                box.classList.add('hidden-left');
+            }
         }
     });
 }
